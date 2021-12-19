@@ -12,7 +12,7 @@ league = League()
 
 win = Tk()
 win.title("My NBA League")
-win.geometry("800x600")
+win.geometry("1000x600")
 title = Label(win, text="My NBA App", font=("Ariel Bold", 50), fg="purple")
 title.grid(column=0, row=0)
 

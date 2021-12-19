@@ -30,7 +30,7 @@ class League:
                                           birth_year=row[10],
                                           height=int(float(row[16])),
                                           position=row[7],
-                                          shirt_num=row[8],
+                                          shirt_num=int(row[8]),
                                           profile_url=row[11])
 
                 team = self.get_team_by_name(player_team_name)
@@ -66,8 +66,10 @@ class League:
 
         return False
 
-    def generate_game(self, team_a, team_b, date):
-        if self.get_team_by_name(team_a) is None or self.get_team_by_name(team_b) is None:
+    def generate_game(self, team_name_a, team_name_b, date):
+        team_a = self.get_team_by_name(team_name_a)
+        team_b = self.get_team_by_name(team_name_b)
+        if team_a is None or team_b is None:
             raise TeamNotExistError
 
         game = BasketballGame(team_a, team_b, date)
