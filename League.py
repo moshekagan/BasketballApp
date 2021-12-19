@@ -67,7 +67,7 @@ class League:
         return False
 
     def generate_game(self, team_a, team_b, date):
-        if not self._is_team_exist(team_a) or not self._is_team_exist(team_b):
+        if self.get_team_by_name(team_a) is None or self.get_team_by_name(team_b) is None:
             raise TeamNotExistError
 
         game = BasketballGame(team_a, team_b, date)
