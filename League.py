@@ -74,3 +74,6 @@ class League:
         self.games.append(game)
 
         return game
+
+    def teams_names(self):
+        return [team.name for team in self.teams]
